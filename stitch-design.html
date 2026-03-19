@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0F0F0F",
+                        "accent-purple": "#d674ff",
+                        "accent-cyan": "#81e9ff",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#0F0F0F",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .bg-mesh {
+            background-color: #0F0F0F;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(214, 116, 255, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 233, 255, 0.08) 0px, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="relative flex h-auto min-h-screen w-full max-w-[390px] mx-auto flex-col bg-mesh overflow-x-hidden">
+<!-- Header/Top Bar -->
+<div class="flex items-center p-6 justify-between">
+<div class="text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full bg-slate-100/5 backdrop-blur-sm cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</div>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-slate-100/5 backdrop-blur-sm text-slate-100">
+<span class="material-symbols-outlined text-[22px]">share</span>
+</button>
+</div>
+</div>
+<!-- Profile Section -->
+<div class="flex px-6 pt-2 pb-8 flex-col items-center">
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-tr from-accent-purple to-accent-cyan rounded-full opacity-30 blur-sm"></div>
+<div class="relative bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-primary shadow-2xl" data-alt="Leon Lush profile photo in high contrast" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsBZbVxNuZ4Q4lQMnEExb4lDS1w5Zp_3r9GfiU5xSUOJRSq-46NdeVaC-n3S2gxRhHh2VBmiAeH7mYyBAnRyV5ijIE-IYkjxwx2D9EyoPlRWtGmWNIn-uhd_L0MPux-Z0ysEstMEc8oVLisn07fRicNygQ53APJydaH2AU4hmAcaSv0o7ljYmfRKOF985CiQsfmlcl8ksKfA9jSsgsOdnfmu8loU_nQHXthdEdEjNbyPXeL1ovtQAtzAOynAFt7wk4Yxvp1f5LRLbH");'>
+</div>
+</div>
+<div class="flex flex-col items-center mt-6 text-center">
+<h1 class="text-white text-3xl font-bold tracking-tight mb-1">Leon Lush</h1>
+<p class="text-slate-400 text-sm font-medium px-4 leading-relaxed">YouTuber, Podcaster &amp; <br/>Internet Commentator</p>
+</div>
+</div>
+<!-- Link Buttons -->
+<div class="flex flex-col gap-3 px-6 pb-8">
+<!-- YouTube - Red Gradient -->
+<a class="flex items-center justify-between px-5 h-16 bg-gradient-to-r from-red-600 to-red-500 rounded-xl shadow-lg shadow-red-900/20 active:scale-95 transition-transform" href="#">
+<span class="text-white font-bold text-base tracking-wide uppercase italic">YouTube Channel</span>
+<span class="material-symbols-outlined text-white/80">play_circle</span>
+</a>
+<!-- Terrible Podcast - Tonal Shift -->
+<a class="flex items-center justify-between px-5 h-16 bg-white/5 hover:bg-white/10 rounded-xl backdrop-blur-md active:scale-95 transition-transform" href="#">
+<span class="text-white font-bold text-base">Terrible Podcast</span>
+<span class="material-symbols-outlined text-accent-purple">mic</span>
+</a>
+<!-- Patreon - Amber/Orange Gradient -->
+<a class="flex items-center justify-between px-5 h-16 bg-gradient-to-r from-orange-500 to-amber-400 rounded-xl shadow-lg shadow-orange-900/20 active:scale-95 transition-transform" href="#">
+<span class="text-primary font-bold text-base tracking-wide uppercase italic">Support on Patreon</span>
+<span class="material-symbols-outlined text-primary">favorite</span>
+</a>
+<!-- Merch Store - Tonal Shift -->
+<a class="flex items-center justify-between px-5 h-16 bg-white/5 hover:bg-white/10 rounded-xl backdrop-blur-md active:scale-95 transition-transform" href="#">
+<span class="text-white font-bold text-base">Merch Store</span>
+<span class="material-symbols-outlined text-accent-cyan">shopping_bag</span>
+</a>
+<!-- Business Inquiries - Tonal Shift -->
+<a class="flex items-center justify-between px-5 h-16 bg-white/5 hover:bg-white/10 rounded-xl backdrop-blur-md active:scale-95 transition-transform" href="#">
+<span class="text-white font-bold text-base">Business Inquiries</span>
+<span class="material-symbols-outlined text-slate-400">mail</span>
+</a>
+</div>
+<!-- Social Icons Row -->
+<div class="flex justify-center gap-6 px-6 py-6 border-t border-white/5 mx-6">
+<a class="text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">smart_display</span>
+</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">close</span>
+</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">video_library</span>
+</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">photo_camera</span>
+</a>
+</div>
+<!-- Footer -->
+<footer class="mt-auto py-8 text-center px-6">
+<p class="text-slate-600 text-[10px] uppercase tracking-[0.2em] font-medium">© 2024 Leon Lush. All rights reserved.</p>
+</footer>
+</div>
+</body></html>
