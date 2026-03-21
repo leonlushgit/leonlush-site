@@ -22,11 +22,12 @@ export default function LinkButton({
       "bg-gradient-to-r from-orange-500 to-amber-400 shadow-lg shadow-orange-900/20 text-[#0F0F0F]",
   };
 
+  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={`flex items-center justify-between px-5 h-16 rounded-xl active:scale-95 transition-transform ${variantStyles[variant]}`}
     >
       <span className="font-bold text-base">{children}</span>

@@ -1,6 +1,12 @@
 import ProfileHeader from "@/components/ProfileHeader";
 import LinkButton from "@/components/LinkButton";
 import SocialIcons, { socialIcons } from "@/components/SocialIcons";
+import NavBar from "@/components/NavBar";
+import HeroSection from "@/components/HeroSection";
+import StatsBar from "@/components/StatsBar";
+import FeaturedVideos from "@/components/FeaturedVideos";
+import MerchSection from "@/components/MerchSection";
+import DesktopFooter from "@/components/DesktopFooter";
 
 // Right-side icon components for link buttons
 const PlayIcon = () => (
@@ -33,7 +39,7 @@ const MailIcon = () => (
   </svg>
 );
 
-// Links configuration
+// Links configuration (mobile)
 const links = [
   {
     href: "https://www.youtube.com/@LeonLush",
@@ -48,13 +54,13 @@ const links = [
     variant: "default" as const,
   },
   {
-    href: "https://www.patreon.com/leonlush",
-    label: "Support on Patreon",
+    href: "https://discord.gg/SRvdfnKqEn",
+    label: "Join the Discord",
     icon: <HeartIcon />,
     variant: "featured" as const,
   },
   {
-    href: "https://shop.leonlush.com",
+    href: "/shop",
     label: "Merch Store",
     icon: <ShopIcon />,
     variant: "default" as const,
@@ -67,7 +73,7 @@ const links = [
   },
 ];
 
-// Social links configuration
+// Social links configuration (mobile)
 const socialLinks = [
   {
     name: "YouTube",
@@ -93,39 +99,52 @@ const socialLinks = [
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen w-full max-w-[390px] mx-auto flex-col bg-mesh overflow-x-hidden">
-      {/* Profile Header */}
-      <div className="pt-12">
-        <ProfileHeader
-          name="Leon Lush"
-          tagline="YouTuber, Podcaster & Internet Commentator"
-          avatarUrl="/images/avatar.jpg"
-        />
+    <>
+      {/* ===== DESKTOP LAYOUT (lg and up) ===== */}
+      <div className="hidden lg:block min-h-screen bg-[#0e0e0e]">
+        <NavBar />
+        <HeroSection />
+        <StatsBar />
+        <FeaturedVideos />
+        <MerchSection />
+        <DesktopFooter />
       </div>
 
-      {/* Link Buttons */}
-      <div className="flex flex-col gap-3 px-6 pb-8">
-        {links.map((link) => (
-          <LinkButton
-            key={link.href}
-            href={link.href}
-            icon={link.icon}
-            variant={link.variant}
-          >
-            {link.label}
-          </LinkButton>
-        ))}
-      </div>
+      {/* ===== MOBILE LAYOUT (below lg) ===== */}
+      <main className="lg:hidden relative flex min-h-screen w-full max-w-[480px] mx-auto flex-col bg-mesh overflow-x-hidden">
+        {/* Profile Header */}
+        <div className="pt-12">
+          <ProfileHeader
+            name="Leon Lush"
+            tagline="YouTuber, Podcaster & Internet Commentator"
+            avatarUrl="/images/avatar.jpg"
+          />
+        </div>
 
-      {/* Social Icons */}
-      <SocialIcons links={socialLinks} />
+        {/* Link Buttons */}
+        <div className="flex flex-col gap-3 px-6 pb-8">
+          {links.map((link) => (
+            <LinkButton
+              key={link.href}
+              href={link.href}
+              icon={link.icon}
+              variant={link.variant}
+            >
+              {link.label}
+            </LinkButton>
+          ))}
+        </div>
 
-      {/* Footer */}
-      <footer className="mt-auto py-8 text-center px-6">
-        <p className="text-slate-600 text-[10px] uppercase tracking-[0.2em] font-medium">
-          &copy; {new Date().getFullYear()} Leon Lush. All rights reserved.
-        </p>
-      </footer>
-    </main>
+        {/* Social Icons */}
+        <SocialIcons links={socialLinks} />
+
+        {/* Footer */}
+        <footer className="mt-auto py-8 text-center px-6">
+          <p className="text-slate-600 text-[10px] uppercase tracking-[0.2em] font-medium">
+            &copy; {new Date().getFullYear()} Leon Lush. All rights reserved.
+          </p>
+        </footer>
+      </main>
+    </>
   );
 }

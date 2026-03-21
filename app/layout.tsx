@@ -31,8 +31,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={spaceGrotesk.className}>
-      <body className="min-h-screen bg-[#0F0F0F] text-slate-100 antialiased">
-        {children}
+      <body className="min-h-screen bg-[#080808] text-slate-100 antialiased">
+        <div className="desktop-glow">{children}</div>
       </body>
     </html>
   );
