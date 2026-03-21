@@ -49,10 +49,10 @@ export default async function FeaturedVideos() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-8 py-20">
+    <section className="max-w-6xl mx-auto px-6 lg:px-8 py-12 lg:py-20">
       {/* Section header */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-bold text-white tracking-tight">
+      <div className="mb-8 lg:mb-10">
+        <h2 className="text-xl lg:text-2xl font-bold text-white tracking-tight">
           Featured Content
         </h2>
         <p className="text-slate-500 text-sm mt-1">
@@ -60,8 +60,8 @@ export default async function FeaturedVideos() {
         </p>
       </div>
 
-      {/* Two-column video grid */}
-      <div className="grid grid-cols-2 gap-8">
+      {/* Video grid — single column on mobile, two columns on desktop */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {channels.map((channel) => (
           <div key={channel.name} className="space-y-4">
             {/* Channel label */}

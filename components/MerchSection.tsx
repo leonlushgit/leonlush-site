@@ -77,24 +77,22 @@ function ScrollButton({ direction, onClick }: { direction: "left" | "right"; onC
 export default function MerchSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Scroll by roughly 3 card widths
+  // Scroll by the visible width of the container
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const cardWidth = container.offsetWidth / 3;
-    const scrollAmount = cardWidth * 3;
-    container.scrollBy({
+    const scrollAmount = scrollRef.current.offsetWidth;
+    scrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };
 
   return (
-    <section id="merch" className="max-w-6xl mx-auto px-8 py-20">
+    <section id="merch" className="max-w-6xl mx-auto px-6 lg:px-8 py-12 lg:py-20">
       {/* Section header */}
-      <div className="flex items-center justify-between mb-10">
+      <div className="flex items-center justify-between mb-8 lg:mb-10">
         <div>
-          <h2 className="text-2xl font-bold text-white tracking-tight">Merch</h2>
+          <h2 className="text-xl lg:text-2xl font-bold text-white tracking-tight">Merch</h2>
           <p className="text-slate-500 text-sm mt-1">brainworms apparel — official collection</p>
         </div>
         <a
@@ -121,8 +119,7 @@ export default function MerchSection() {
               href={product.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block flex-shrink-0"
-              style={{ width: "calc((100% - 48px) / 3)" }}
+              className="group block flex-shrink-0 w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]"
             >
               {/* Product image */}
               <div className="aspect-square rounded-xl overflow-hidden bg-[#1a1919] mb-4">
